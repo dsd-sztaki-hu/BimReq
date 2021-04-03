@@ -1,4 +1,6 @@
 @prefix : <http://demo.dsd.sztaki.hu/bimreq#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dce: <http://purl.org/dc/elements/1.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,6 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix ifcowl: <http://ifcowl.openbimstandards.org/IFC4#> .
 @prefix express: <https://w3id.org/express#> .
 @base <http://demo.dsd.sztaki.hu/bimreq> .
@@ -15,10 +18,14 @@
                                     owl:imports sh: ,
                                                 foaf: ,
                                                 express: ;
-                                    <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> ;
+                                    cc:license <http://creativecommons.org/licenses/by/4.0/> ;
                                     dce:creator "András Micsik, Ádám Kovács" ;
-                                    dce:date "2021-03-31"^^xsd:date ;
+                                    dce:description "BimReq is a ligtweight ontology to represent regulations and requirements in RDF for AEC (Architecture, Engineering, Construction) projects. The requirements can refer to regulations and may contain SHACL validation shapes for compliance checking of BIM models."@en ;
+                                    dce:issued "2021-01-31"@en ;
+                                    dce:modified "2021-04-02"@en ;
                                     dce:title "BimReq"@en ;
+                                    vann:preferredNamespacePrefix "bimreq" ;
+                                    vann:preferredNamespaceUri "http://demo.dsd.sztaki.hu/bimreq" ;
                                     rdfs:label "BimReq ontology for validation and reporting on requirements against BIM models."@en ;
                                     owl:versionInfo 0.9 .
 
@@ -46,13 +53,16 @@ dce:description rdf:type owl:AnnotationProperty .
 dce:identifier rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/elements/1.1/issued
+dce:issued rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/elements/1.1/language
 dce:language rdf:type owl:AnnotationProperty .
 
 
-###  http://purl.org/dc/elements/1.1/rights
-dce:rights rdf:type owl:AnnotationProperty ;
-           rdfs:subPropertyOf dce:date .
+###  http://purl.org/dc/elements/1.1/modified
+dce:modified rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/source
@@ -65,6 +75,10 @@ dce:subject rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/elements/1.1/title
 dce:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/ns/shacl#datatype
@@ -190,67 +204,67 @@ sh:class rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/dc/terms/alternative
-<http://purl.org/dc/terms/alternative> rdf:type owl:DatatypeProperty ;
-                                       rdfs:subPropertyOf <http://purl.org/dc/terms/title> ;
-                                       rdfs:range rdfs:Literal .
+dc:alternative rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf dc:title ;
+               rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/available
-<http://purl.org/dc/terms/available> rdf:type owl:DatatypeProperty ;
-                                     rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                     rdfs:range rdfs:Literal .
+dc:available rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf dc:date ;
+             rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> rdf:type owl:DatatypeProperty ;
-                                   rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                   rdfs:range rdfs:Literal .
+dc:created rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf dc:date ;
+           rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/date
-<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
-                                rdfs:range rdfs:Literal .
+dc:date rdf:type owl:DatatypeProperty ;
+        rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateAccepted
-<http://purl.org/dc/terms/dateAccepted> rdf:type owl:DatatypeProperty ;
-                                        rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                        rdfs:range rdfs:Literal .
+dc:dateAccepted rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf dc:date ;
+                rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateCopyrighted
-<http://purl.org/dc/terms/dateCopyrighted> rdf:type owl:DatatypeProperty ;
-                                           rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                           rdfs:range rdfs:Literal .
+dc:dateCopyrighted rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf dc:date ;
+                   rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/dateSubmitted
-<http://purl.org/dc/terms/dateSubmitted> rdf:type owl:DatatypeProperty ;
-                                         rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                         rdfs:range rdfs:Literal .
+dc:dateSubmitted rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf dc:date ;
+                 rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/issued
-<http://purl.org/dc/terms/issued> rdf:type owl:DatatypeProperty ;
-                                  rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                  rdfs:range xsd:date .
+dc:issued rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf dc:date ;
+          rdfs:range xsd:date .
 
 
 ###  http://purl.org/dc/terms/modified
-<http://purl.org/dc/terms/modified> rdf:type owl:DatatypeProperty ;
-                                    rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                    rdfs:range rdfs:Literal .
+dc:modified rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf dc:date ;
+            rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
-                                 rdfs:range rdfs:Literal .
+dc:title rdf:type owl:DatatypeProperty ;
+         rdfs:range rdfs:Literal .
 
 
 ###  http://purl.org/dc/terms/valid
-<http://purl.org/dc/terms/valid> rdf:type owl:DatatypeProperty ;
-                                 rdfs:subPropertyOf <http://purl.org/dc/terms/date> ;
-                                 rdfs:range xsd:date .
+dc:valid rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf dc:date ;
+         rdfs:range xsd:date .
 
 
 ###  http://www.w3.org/ns/shacl#closed
@@ -349,8 +363,8 @@ foaf:Agent rdf:type owl:Class .
 ###  http://demo.dsd.sztaki.hu/bimreq#exampleWindowRegulation
 :exampleWindowRegulation rdf:type owl:NamedIndividual ,
                                   :Regulation ;
-                         <http://purl.org/dc/terms/issued> "2000-01-31"^^xsd:date ;
-                         <http://purl.org/dc/terms/valid> "2000-02-01"^^xsd:date ;
+                         dc:issued "2000-01-31"^^xsd:date ;
+                         dc:valid "2000-02-01"^^xsd:date ;
                          dce:creator :Example_regulatory_organization ;
                          dce:description "Thermal transmittance for the A type windows must be below 1.8"@en ;
                          dce:identifier "R4354" ;

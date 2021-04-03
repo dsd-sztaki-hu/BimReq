@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://demo.dsd.sztaki.hu/bimreq#"
+     xml:base="http://demo.dsd.sztaki.hu/bimreq"
+     xmlns:cc="http://creativecommons.org/ns#"
+     xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:sh="http://www.w3.org/ns/shacl#"
+     xmlns:dce="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:ifcowl="http://ifcowl.openbimstandards.org/IFC4#"
+     xmlns:express="https://w3id.org/express#">
+    <owl:Ontology rdf:about="http://demo.dsd.sztaki.hu/bimreq">
+        <owl:imports rdf:resource="http://www.w3.org/ns/shacl#"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <owl:imports rdf:resource="https://w3id.org/express#"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dce:creator>András Micsik, Ádám Kovács</dce:creator>
+        <dce:description xml:lang="en">BimReq is a ligtweight ontology to represent regulations and requirements in RDF for AEC (Architecture, Engineering, Construction) projects. The requirements can refer to regulations and may contain SHACL validation shapes for compliance checking of BIM models.</dce:description>
+        <dce:issued xml:lang="en">2021-01-31</dce:issued>
+        <dce:modified xml:lang="en">2021-04-02</dce:modified>
+        <dce:title xml:lang="en">BimReq</dce:title>
+        <vann:preferredNamespacePrefix>bimreq</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://demo.dsd.sztaki.hu/bimreq</vann:preferredNamespaceUri>
+        <rdfs:label xml:lang="en">BimReq ontology for validation and reporting on requirements against BIM models.</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/subject -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#datatype -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#datatype"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#defaultValue -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#defaultValue"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#description"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#filterShape -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#filterShape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#hasValue -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#hasValue"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#name -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#name"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#path -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#path"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#property -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#severity -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#severity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#subject -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#subject"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#targetClass -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#targetClass"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#basedOn -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#basedOn">
+        <rdfs:domain rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Report"/>
+        <rdfs:range rdf:resource="http://demo.dsd.sztaki.hu/bimreq#RequirementSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#contains -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#contains">
+        <owl:inverseOf rdf:resource="http://demo.dsd.sztaki.hu/bimreq#inSet"/>
+        <rdfs:domain rdf:resource="http://demo.dsd.sztaki.hu/bimreq#RequirementSet"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://demo.dsd.sztaki.hu/bimreq#Requirement"/>
+                    <rdf:Description rdf:about="http://demo.dsd.sztaki.hu/bimreq#RequirementSet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#hasResult -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#hasResult">
+        <rdfs:domain rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Report"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/shacl#ValidationReport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#inSet -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#inSet">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://demo.dsd.sztaki.hu/bimreq#Requirement"/>
+                    <rdf:Description rdf:about="http://demo.dsd.sztaki.hu/bimreq#RequirementSet"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://demo.dsd.sztaki.hu/bimreq#RequirementSet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#issuer -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#issuer">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#sourceRegulation -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#sourceRegulation">
+        <rdfs:domain rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Requirement"/>
+        <rdfs:range rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Regulation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#validatorShape -->
+
+    <owl:ObjectProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#validatorShape">
+        <rdfs:domain rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Requirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/shacl#Shape"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#and -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/shacl#and"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#class -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/shacl#class"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#target_type -->
+
+    <owl:DatatypeProperty rdf:about="http://demo.dsd.sztaki.hu/bimreq#target_type"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/alternative -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/alternative">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/available -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/available">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/dateAccepted -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/dateAccepted">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/dateCopyrighted -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/dateCopyrighted">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/dateSubmitted -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/dateSubmitted">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/issued">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/valid -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/valid">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#closed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/shacl#closed"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#maxInclusive -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/shacl#maxInclusive"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#uniqueLang -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/shacl#uniqueLang"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#xone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/shacl#xone"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#Regulation -->
+
+    <owl:Class rdf:about="http://demo.dsd.sztaki.hu/bimreq#Regulation">
+        <sh:description xml:lang="en">Regulations for Architecture, Engineering &amp; Construction (AEC) projects. Describe primarily with the metadata necessary for identification using Dublin Core terms. For example, creator is the regulator authority. Ideally, regulations would be provided by the regulators themselves. It may contain a SHACL Shape for automated checking of BIM models.</sh:description>
+    </owl:Class>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#Report -->
+
+    <owl:Class rdf:about="http://demo.dsd.sztaki.hu/bimreq#Report">
+        <sh:description xml:lang="en">The outcome of evaluation of a BIM model against a RequirementSet.</sh:description>
+    </owl:Class>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#Requirement -->
+
+    <owl:Class rdf:about="http://demo.dsd.sztaki.hu/bimreq#Requirement">
+        <sh:description xml:lang="en">Requirements may be raised by the client or a designer, but may also be derived from regulations. A SHACL Shape may be added to a requirement for automated checking of BIM models in IFC OWL.</sh:description>
+    </owl:Class>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#RequirementSet -->
+
+    <owl:Class rdf:about="http://demo.dsd.sztaki.hu/bimreq#RequirementSet">
+        <sh:description xml:lang="en">A group of requirements. Useful for coupling with projects or BIM models.</sh:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#AnnotationProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#AnnotationProperty"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#DatatypeProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#DatatypeProperty"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#ObjectProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#ObjectProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#NodeShape -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/shacl#NodeShape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#Shape -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/shacl#Shape"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#ValidationReport -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/shacl#ValidationReport"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#Example_BIM_project_offixe -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#Example_BIM_project_offixe">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:seeAlso>http://example-bim-project.org</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#Example_regulatory_organization -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#Example_regulatory_organization">
+        <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:seeAlso>http://example-org.org</rdfs:seeAlso>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#WindowThermalShape -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#WindowThermalShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+        <sh:description xml:lang="en">Thermal transmittance checking on windows.</sh:description>
+        <sh:filterShape rdf:resource="http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterShape"/>
+        <sh:property rdf:resource="http://demo.dsd.sztaki.hu/bimreq#windowThermalShapeProperty"/>
+        <sh:targetClass rdf:resource="http://ifcowl.openbimstandards.org/IFC4#IfcPropertySingleValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#exampleWindowRegulation -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#exampleWindowRegulation">
+        <rdf:type rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Regulation"/>
+        <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-01-31</dc:issued>
+        <dc:valid rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2000-02-01</dc:valid>
+        <dce:creator rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Example_regulatory_organization"/>
+        <dce:description xml:lang="en">Thermal transmittance for the A type windows must be below 1.8</dce:description>
+        <dce:identifier>R4354</dce:identifier>
+        <dce:source>R4354-2001 (sample regulation document)</dce:source>
+        <dce:subject xml:lang="en">Thermal transmittance</dce:subject>
+        <rdfs:label xml:lang="en">Example Window Regulation 01</rdfs:label>
+        <sh:targetClass rdf:resource="ifcowl:IfcWindow"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#exampleWindowReq -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#exampleWindowReq">
+        <rdf:type rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Requirement"/>
+        <inSet rdf:resource="http://demo.dsd.sztaki.hu/bimreq#exampleWindowRegulation"/>
+        <sourceRegulation rdf:resource="http://demo.dsd.sztaki.hu/bimreq#exampleWindowRegulation"/>
+        <validatorShape rdf:resource="http://demo.dsd.sztaki.hu/bimreq#WindowThermalShape"/>
+        <dce:creator rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Example_BIM_project_offixe"/>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-12</dce:date>
+        <dce:description xml:lang="en">Thermal transmittance for the A type windows must be below 1.8 according to regulation R4354.</dce:description>
+        <rdfs:label xml:lang="en">Thermal transmittance requirement</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#windowRequirementSet -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#windowRequirementSet">
+        <rdf:type rdf:resource="http://demo.dsd.sztaki.hu/bimreq#RequirementSet"/>
+        <contains rdf:resource="http://demo.dsd.sztaki.hu/bimreq#exampleWindowReq"/>
+        <dce:creator rdf:resource="http://demo.dsd.sztaki.hu/bimreq#Example_BIM_project_offixe"/>
+        <rdfs:label xml:lang="en">Example set for window requirements</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterPropertyPathList -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterPropertyPathList">
+        <dce:description xml:lang="en">this list would contain (ifcowl:name_IfcProperty express:hasString) but it is too complicated in Protege</dce:description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterPropertyShape -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterPropertyShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+        <sh:hasValue xml:lang="en">ThermalTransmittance</sh:hasValue>
+        <sh:path rdf:resource="http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterPropertyPathList"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterShape -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterShape">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#Shape"/>
+        <sh:property rdf:resource="http://demo.dsd.sztaki.hu/bimreq#windowThermalFilterPropertyShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#windowThermalShapeProperty -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#windowThermalShapeProperty">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+        <sh:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.8</sh:maxInclusive>
+        <sh:datatype>xsd:decimal</sh:datatype>
+        <sh:path rdf:resource="http://demo.dsd.sztaki.hu/bimreq#windowThermalShapePropertyPathList"/>
+        <sh:severity rdf:resource="http://www.w3.org/ns/shacl#Warning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo.dsd.sztaki.hu/bimreq#windowThermalShapePropertyPathList -->
+
+    <owl:NamedIndividual rdf:about="http://demo.dsd.sztaki.hu/bimreq#windowThermalShapePropertyPathList">
+        <dce:description xml:lang="en">a list containing (ifcowl:nominalValue_IfcPropertySingleValue express:hasDouble)</dce:description>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
