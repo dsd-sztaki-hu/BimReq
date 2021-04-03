@@ -18,6 +18,7 @@
                                     <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by/4.0/> ;
                                     dce:creator "András Micsik, Ádám Kovács" ;
                                     dce:date "2021-03-31"^^xsd:date ;
+                                    dce:title "BimReq"@en ;
                                     rdfs:label "BimReq ontology for validation and reporting on requirements against BIM models."@en ;
                                     owl:versionInfo 0.9 .
 
@@ -47,6 +48,11 @@ dce:identifier rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/elements/1.1/language
 dce:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dce:rights rdf:type owl:AnnotationProperty ;
+           rdfs:subPropertyOf dce:date .
 
 
 ###  http://purl.org/dc/elements/1.1/source
