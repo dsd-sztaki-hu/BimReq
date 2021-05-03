@@ -13,7 +13,7 @@ BimReq is a ligtweight ontology to represent regulations and requirements in RDF
   * [foaf:](http://xmlns.com/foaf/0.1/)
   * [sh:](http://www.w3.org/ns/shacl#)
 * **Ontology RDF**
-  * RDF ([bimreq.rdf](xml))
+  * RDF [bimreq.rdf]
   * Turtle ([bimreq.owl](ttl))
 
 ### Description
