@@ -29,6 +29,8 @@ Example use ([bimreqExample.ttl](turtle))
 ## Overview
 
 **Figure 1:** Ontology overview
+![bimreq-overview.png](bimreq-overview.png)
+
 ## Classes
 [Regulation](#Regulation)
 [Report](#Report)
