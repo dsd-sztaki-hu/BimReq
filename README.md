@@ -1,10 +1,6 @@
 # BimReq
 BimReq is a ligtweight ontology to represent regulations and requirements in RDF for construction projects. 
 
-Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 2.9.1
-
-# BimReq
-
 ## Metadata
 * **URI**
   * `http://demo.dsd.sztaki.hu/bimreq`
@@ -165,3 +161,5 @@ Range(s) |[sh:Shape](http://www.w3.org/ns/shacl#Shape) (c)<br />
 * Annotation Properties: dp
 * Properties: p
 * Named Individuals: ni
+
+Markdown documentation created with [pyLODE](http://github.com/rdflib/pyLODE) 2.9.1
