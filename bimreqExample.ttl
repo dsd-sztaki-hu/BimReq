@@ -1,0 +1,73 @@
+:Example_BIM_project_office rdf:type owl:NamedIndividual ,
+                                     foaf:Organization ;
+                                     rdfs:label "Example project office"@en ;
+                            dce:description "Example project office using BIM."@en .
+
+:Example_regulatory_organization rdf:type owl:NamedIndividual ,
+                                          foaf:Organization ;
+                                          rdfs:label "Example regulations authority"@en ;
+                                          dce:description "Example authority issuing regulations."@en .
+
+
+:WindowThermalShape rdf:type owl:NamedIndividual ,
+                             sh:NodeShape ;
+                    sh:description "Thermal transmittance checking on windows."@en ;
+                    sh:filterShape :windowThermalFilterShape ;
+                    sh:property :windowThermalShapeProperty ;
+                    sh:targetClass ifcowl:IfcPropertySingleValue .
+
+:exampleWindowRegulation rdf:type owl:NamedIndividual ,
+                                  :Regulation ;
+                         dc:issued "2000-01-31"^^xsd:date ;
+                         dc:valid "2000-02-01"^^xsd:date ;
+                         dce:creator :Example_regulatory_organization ;
+                         dce:description "Thermal transmittance for the A type windows must be below 1.8"@en ;
+                         dce:identifier "R4354" ;
+                         dce:source "R4354-2001 (sample regulation document)" ;
+                         dce:subject "Thermal transmittance"@en ;
+                         rdfs:label "Example Window Regulation 01"@en ;
+                         sh:targetClass <ifcowl:IfcWindow> .
+
+:exampleWindowReq rdf:type owl:NamedIndividual ,
+                           :Requirement ;
+                  :inSet :exampleWindowRegulation ;
+                  :sourceRegulation :exampleWindowRegulation ;
+                  :validatorShape :WindowThermalShape ;
+                  dce:creator :Example_BIM_project_office ;
+                  dce:date "2021-01-12"^^xsd:date ;
+                  dce:description "Thermal transmittance for the A type windows must be below 1.8 according to regulation R4354."@en ;
+                  rdfs:label "Thermal transmittance requirement"@en .
+
+
+:windowRequirementSet rdf:type owl:NamedIndividual ,
+                               :RequirementSet ;
+                      :contains :exampleWindowReq ;
+                      dce:creator :Example_BIM_project_office ;
+                      rdfs:label "Example set for window requirements"@en .
+
+
+:windowThermalFilterPropertyPathList rdf:type owl:NamedIndividual ;
+                                     dce:description "this list would contain (ifcowl:name_IfcProperty express:hasString) but it is too complicated in Protege"@en .
+
+
+:windowThermalFilterPropertyShape rdf:type owl:NamedIndividual ,
+                                           sh:PropertyShape ;
+                                  sh:hasValue "ThermalTransmittance"@en ;
+                                  sh:path :windowThermalFilterPropertyPathList .
+
+
+:windowThermalFilterShape rdf:type owl:NamedIndividual ,
+                                   sh:Shape ;
+                          sh:property :windowThermalFilterPropertyShape .
+
+
+:windowThermalShapeProperty rdf:type owl:NamedIndividual ,
+                                     sh:PropertyShape ;
+                            sh:maxInclusive 1.8 ;
+                            sh:datatype "xsd:decimal" ;
+                            sh:path :windowThermalShapePropertyPathList ;
+                            sh:severity sh:Warning .
+
+
+:windowThermalShapePropertyPathList rdf:type owl:NamedIndividual ;
+                                    dce:description "a list containing (ifcowl:nominalValue_IfcPropertySingleValue express:hasDouble)"@en .
