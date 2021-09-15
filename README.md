@@ -19,7 +19,7 @@ BimReq is a ligtweight ontology to represent regulations and requirements in RDF
 
 [Example for requirement description](bimreqExample.ttl)
 
-[Example for validating with SHACL](examples/Bimreq-Shacl.ipynb)
+[Example for validating with SHACL](examples/Bimreq-Shacl.ipynb) (Jupyter Notebook)
 
 [Documentation](http://150.146.207.114/lode/extract?url=https%3A%2F%2Fdsd-sztaki-hu.github.io%2FBimReq%2Fbimreq.ttl&owlapi=true&lang=en)
 
