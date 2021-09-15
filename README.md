@@ -17,8 +17,9 @@ BimReq is a ligtweight ontology to represent regulations and requirements in RDF
 ### Description
 BimReq is a ligtweight ontology to represent regulations and requirements in RDF for AEC (Architecture, Engineering, Construction) projects. The requirements can refer to regulations and may contain SHACL validation shapes for compliance checking of BIM models.
 
-Example for requirement description: ([bimreqExample.ttl](bimreqExample.ttl))
-Example for validating with SHACL: (examples/Bimreq-Shacl.ipynb)
+[Example for requirement description](bimreqExample.ttl)
+
+[Example for validating with SHACL](examples/Bimreq-Shacl.ipynb)
 
 [Documentation](http://150.146.207.114/lode/extract?url=https%3A%2F%2Fdsd-sztaki-hu.github.io%2FBimReq%2Fbimreq.ttl&owlapi=true&lang=en)
 
